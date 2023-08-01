@@ -22,8 +22,6 @@ Enjoy the CTF!
 
 ### Solution:
 
-{::options parse_block_html="true" /}
-
 <details>
 
 <summary>Solution</summary>
@@ -43,5 +41,3 @@ That is just another way to say _rotate the image by 180°_.
 </details>
 
 </details>
-
-{::options parse_block_html="false" /}

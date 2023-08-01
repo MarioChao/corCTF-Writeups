@@ -13,15 +13,13 @@ Downloads<br>
 
 ### Solution:
 
-{::options parse_block_html="true" /}
+<details>
+
+<summary>Solution</summary>
 
 <details>
 
-<summary markdown="span">Solution</summary>
-
-<details>
-
-<summary markdown="span">First</summary>
+<summary>First</summary>
 
 Examine the Python file _tadpole.py_
 
@@ -62,7 +60,7 @@ print("f(f(31337)) = ", f(f(31337)))
 
 <details>
 
-<summary markdown="span">Next</summary>
+<summary>Next</summary>
 
 Before we start, write out the definition of the function $f(s)$.
 
@@ -99,7 +97,7 @@ Now, we have two equations with the left side solvable using information from _o
 
 <details>
 
-<summary markdown="span">Solve</summary>
+<summary>Solve</summary>
 
 The two equations we got are:
 
@@ -114,7 +112,7 @@ All variables on the left side are known in output.txt.
 
 <details>
 
-<summary markdown="span">Output.txt</summary>
+<summary>Output.txt</summary>
 
 ```
 a =  7904681699700731398014734140051852539595806699214201704996640156917030632322659247608208994194840235514587046537148300460058962186080655943804500265088604049870276334033409850015651340974377752209566343260236095126079946537115705967909011471361527517536608234561184232228641232031445095605905800675590040729
@@ -131,7 +129,7 @@ Assign each number to a variable in the Python shell.
 
 <details>
 
-<summary markdown="span">Assign Variables</summary>
+<summary>Assign Variables</summary>
 
 ```python
 a =  7904681699700731398014734140051852539595806699214201704996640156917030632322659247608208994194840235514587046537148300460058962186080655943804500265088604049870276334033409850015651340974377752209566343260236095126079946537115705967909011471361527517536608234561184232228641232031445095605905800675590040729
@@ -170,15 +168,13 @@ print(long_to_bytes(multP).decode("utf-8"))
 
 <details>
 
-<summary markdown="span">Flag</summary>
+<summary>Flag</summary>
 
 flag: `corctf{1n_m4th3m4t1c5,_th3_3ucl1d14n_4lg0r1thm_1s_4n_3ff1c13nt_m3th0d_f0r_c0mput1ng_th3_GCD_0f_tw0_1nt3g3rs}`
 
 </details>
 
 </details>
-
-{::options parse_block_html="false" /}
 
 ## Other Things:
 
