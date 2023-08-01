@@ -13,12 +13,12 @@ Downloads<br>
 
 ### Solution:
 
-<details>
+{::options parse_block_html="true" /}
 
+<details>
 <summary>Solution</summary>
 
 <details>
-
 <summary>First</summary>
 
 Examine the Python file _tadpole.py_
@@ -59,7 +59,6 @@ print("f(f(31337)) = ", f(f(31337)))
 </details>
 
 <details>
-
 <summary>Next</summary>
 
 Before we start, write out the definition of the function $f(s)$.
@@ -96,7 +95,6 @@ Now, we have two equations with the left side solvable using information from _o
 </details>
 
 <details>
-
 <summary>Solve</summary>
 
 The two equations we got are:
@@ -111,7 +109,6 @@ $$
 All variables on the left side are known in output.txt.
 
 <details>
-
 <summary>Output.txt</summary>
 
 ```
@@ -128,7 +125,6 @@ f(f(31337)) =  65547980822717919074991147621216627925232640728803041128894527143
 Assign each number to a variable in the Python shell.
 
 <details>
-
 <summary>Assign Variables</summary>
 
 ```python
@@ -167,7 +163,6 @@ print(long_to_bytes(multP).decode("utf-8"))
 </details>
 
 <details>
-
 <summary>Flag</summary>
 
 flag: `corctf{1n_m4th3m4t1c5,_th3_3ucl1d14n_4lg0r1thm_1s_4n_3ff1c13nt_m3th0d_f0r_c0mput1ng_th3_GCD_0f_tw0_1nt3g3rs}`
@@ -175,6 +170,8 @@ flag: `corctf{1n_m4th3m4t1c5,_th3_3ucl1d14n_4lg0r1thm_1s_4n_3ff1c13nt_m3th0d_f0r
 </details>
 
 </details>
+
+{::options parse_block_html="false" /}
 
 ## Other Things:
 
