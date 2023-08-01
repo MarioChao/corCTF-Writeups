@@ -101,10 +101,8 @@ Now, we have two equations with the left side solvable using information from _o
 
 The two equations we got are:
 
-$$
-(a \times 31337 + b) - f(31337) = k \times p \\
-(a \times f(31337) + b) - f(f(31337)) = l \times p
-$$
+$$(a \times 31337 + b) - f(31337) = k \times p \\
+(a \times f(31337) + b) - f(f(31337)) = l \times p$$
 
 All variables on the left side are known in output.txt.
 
