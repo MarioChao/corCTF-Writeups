@@ -14,6 +14,8 @@ Downloads<br>
 
 ### Solution:
 
+{::options parse_block_html="true" /}
+
 <details>
 
 <summary>Solution</summary>
@@ -222,6 +224,8 @@ Flag: `corctf{ATLEASTITSNOTAGENERICROTTHIRTEENCHALLENGEIGUESS}`
 </details>
 
 </details>
+
+{::options parse_block_html="false" /}
 
 ## Other Things
 

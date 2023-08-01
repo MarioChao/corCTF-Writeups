@@ -13,6 +13,8 @@ Downloads<br>
 
 ### Solution:
 
+{::options parse_block_html="true" /}
+
 <details>
 
 <summary>Solution</summary>
@@ -175,6 +177,8 @@ flag: `corctf{1n_m4th3m4t1c5,_th3_3ucl1d14n_4lg0r1thm_1s_4n_3ff1c13nt_m3th0d_f0r
 </details>
 
 </details>
+
+{::options parse_block_html="false" /}
 
 ## Other Things:
 
