@@ -14,13 +14,7 @@ Downloads<br>
 
 ### Solution:
 
-<details>
-
-<summary>Solution</summary>
-
-<details>
-
-<summary>First</summary>
+#### -=[ First Step ]=-
 
 Examine _cbc.py_
 
@@ -92,11 +86,9 @@ print(f"{iv = }")
 print(f"{ct = }")
 ```
 
-</details>
+---
 
-<details>
-
-<summary>Next</summary>
+#### -=[ Next Step ]=-
 
 We will need to find a way to recover the original $plaintext$.
 
@@ -158,11 +150,9 @@ The simplest solution for me to get the key is through [dcode.fr](https://www.dc
 
 Since the "key length" option of the decoder has a size limit of 500, we can copy the $key$ and then use the "known key" option of the decoder to obtain the full $plaintext$.
 
-</details>
+---
 
-<details>
-
-<summary>Solve</summary>
+#### -=[ Solve ]=-
 
 Using the ideas from the _Next_ step, we can write a program that give us the Vigenere ciphertext.
 
@@ -176,18 +166,10 @@ def remove_key(key, block):
 
 Next, assign variables $iv$ and $ct$ using _cbc_output.txt_
 
-<details>
-
-<summary>Assign</summary>
-
 ```python
 iv = "RLNZXWHLULXRLTNP"
 ct = "ZQTJIHLVWMPBYIFRQBUBUESOOVCJHXXLXDKPBQCUXWGJDHJPQTHXFQIQMBXNVOIPJBRHJQOMBMNJSYCRAHQBPBSMMJWJKTPRAUYZVZTHKTPUAPGAIJPMZZZDZYGDTKFLWAQTSKASXNDRRQQDJVBREUXFULWGNSIINOYULFXLDNMGWWVSCEIORQESVPFNMWZKPIYMYVFHTSRDJWQBTWHCURSBPUKKPWIGXERMPXCHSZKYMFLPIAHKTXOROOJHUCSGINWYEILFIZUSNRVRBHVCJPVPSEGUSYOAMXKSUKSWSOJTYYCMEHEUNPJAYXXJWESEWNSCXBPCCIZNGOVFRTGKYHVSZYFNRDOVPNWEDDJYITHJUBVMWDNNNZCLIPOSFLNDDWYXMYVCEOHZSNDUXPIBKUJIJEYOETXWOJNFQAHQOVTRRXDCGHSYNDYMYWVGKCCYOBDTZZEQQEFGSPJJIAAWVDXFGPJKQJCZMTPMFZDVRMEGMPUEMOUVGJXXBRFCCCRVTUXYTTORMSQBLZUEHLYRNJAAIVCRFSHLLPOANFKGRWBYVSOBLCTDAUDVMMHYSYCDZTBXTDARWRTAFTCVSDRVEENLHOHWBOPYLMSDVOZRLENWEKGAWWCNLOKMKFWWAZJJPFDSVUJFCODFYIMZNZTMAFJHNLNMRMLQRTJJXJCLMQZMOFOGFPXBUTOBXUCWMORVUIIXELTVIYBLPEKKOXYUBNQONZLPMGWMGRZXNNJBUWBEFNVXUIAEGYKQSLYSDTGWODRMDBHKCJVWBNJFTNHEWGOZFEZMTRBLHCMHIFLDLORMVMOOHGXJQIIYHZFMROGUUOMXBTFMKERCTYXFIHVNFWWIUFTGLCKPJRFDRWDXIKLJJLNTWNQIOFWSIUQXMFFVIIUCDEDFEJNLKLQBALRKEYWSHESUJJXSHYWNRNPXCFUEFRJKSIGXHFTKNJXSYVITDOGYIKGJIOOHUFILWYRBTCQPRPNOKFKROTFZNOCZXZEYUNWJZDPJDGIZLWBBDGZJNRQRPFFGOTGFBACCRKLAPFLOGVYFXVIIJMBBMXWJGLPOQQHMNBCINRGZRBVSMLKOAFGYRUDOPCCULRBE"
 ```
-
-</details>
-
-<br>
 
 Then, split $ct$ into $prev\_blocks$.
 ```python
@@ -196,7 +178,7 @@ blockCnt = len(ct) // klen
 prev_blocks = [ct[i : i + klen] for i in range(0, len(ct), klen)]
 ```
 
-Afterwards, minus each $prev\_block$ by the previous $prev\_block$ to get $blocksAddKey$. (first $prev\_block$ will minus $iv$)
+Afterwards, minus each $prev\_block$ by the previous $prev\_block$ to get $blocksAddKey$: (first $prev\_block$ will be subtracted by $iv$)
 ```python
 blocksAddKey = [remove_key(prev_blocks[i - 1] if i > 0 else iv, prev_blocks[i]) for i in range(0, blockCnt)]
 ```
@@ -209,21 +191,14 @@ print("Code:", code)
 
 Using [dcode.fr's Vigenere cipher](https://www.dcode.fr/vigenere-cipher), we obtain the key `ACXQTSTCSXZWFCZY`.
 
-Decoding the full Vigenere ciphertext with the key gives us a large chunk of text, and the flag's text is located at the end.
+Decoding the full Vigenere ciphertext with the key gives us a large chunk of text, and the flag's text is located at the end.<br>
+[Here](../../assets/corctf23_cbc_decrypted_text.txt) is the full decrypted text with spacing.
 
-</details>
-
-<details>
-
-<summary>Flag</summary>
+---
 
 Flag: `corctf{ATLEASTITSNOTAGENERICROTTHIRTEENCHALLENGEIGUESS}`
 
-</details>
-
-</details>
-
 ## Other Things
 
-Here is a program to the challenge, I guess.<br>
+Here is a solution program to the challenge, I guess.<br>
 [corctf23_cbc.py](../../assets/corctf23_cbc.py)
