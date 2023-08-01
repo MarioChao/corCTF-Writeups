@@ -24,7 +24,7 @@ alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 bs = 16
 ```
 
-The program opens up two text files the combines the alphabets in _message.txt_ with the content of _flag.txt_.
+The program opens up two text files that combine the alphabets in _message.txt_ with the content of _flag.txt_.
 ```python
 message = open("message.txt").read().upper()
 message = "".join([char for char in message if char in alphabet])
@@ -146,7 +146,7 @@ By reversing the process of `add_key()` on each $prev\_block$ using the previous
 
 Also recall from the _First_ step that $plaintext$ is split into blocks of a fix length of 16.<br>
 If each $block$ is added with the $key$ as shown above, then the concatenated string of every block will be the $plaintext$ encrypted with a 16-letter Vigenere key.<br>
-The simplest solution for me to get the key is through [dcode.fr](https://www.dcode.fr)'s Vigenere decoder with key length of 16.
+The simplest solution for me to get the key is through [dcode.fr](https://www.dcode.fr)'s Vigenere decoder with a key length of 16.
 
 Since the "key length" option of the decoder has a size limit of 500, we can copy the $key$ and then use the "known key" option of the decoder to obtain the full $plaintext$.
 
@@ -154,7 +154,7 @@ Since the "key length" option of the decoder has a size limit of 500, we can cop
 
 #### -=[ Solve ]=-
 
-Using the ideas from the _Next_ step, we can write a program that give us the Vigenere ciphertext.
+Using the ideas from the _Next_ step, we can write a program that gives us the Vigenere ciphertext.
 
 First, define the reverse of `add_key()`, name it `remove_key()`.<br>
 Basically, it is `add_key()` but with `(k_a + pt_a)` changed to `pt_a - k_a`.

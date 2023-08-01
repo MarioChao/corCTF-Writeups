@@ -1,6 +1,6 @@
 # Introduction
 
-Kcehc Ytinas is a challenge based on sanity check.
+Kcehc Ytinas is a challenge based on sanity checks.
 
 Sanity check is a simple test that checks for obvious errors.<br>
 This check is often done to determine whether something that occurred is possible or not.

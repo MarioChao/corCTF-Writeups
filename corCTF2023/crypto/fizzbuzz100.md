@@ -1,6 +1,6 @@
 # Introduction
 
-Fizzbuzz is a type of algorithm that usually prints out "Fizz" or "Buzz" if a number is divisible by 3 or 5 respectively, "Fizzbuzz", if the number is divisible by both 3 and 5, or the number itself if it's divisble by neither 3 nor 5.
+Fizzbuzz is a type of algorithm that usually prints out "Fizz" or "Buzz" if a number is divisible by 3 or 5 respectively, "Fizzbuzz", if the number is divisible by both 3 and 5, or the number itself if it's divisible by neither 3 nor 5.
 
 In this challenge, the program runs an RSA encryption of a padded  and provides an interaction that decrypts given numbers.
 
@@ -42,7 +42,7 @@ while True:
 
 We can make the interaction spit out a $pt$ closely related to the $flag$ by sending a $ct$ derived from the flag's ciphertext (let it be $flag\_ct$).
 
-In this case, we will send $flag\_ct$ multipled by $2^e \bmod n$, with $e$ as the RSA public key exponent and $n$ as the RSA public key modulo.
+In this case, we will send $flag\_ct$ multiplied by $2^e \bmod n$, with $e$ as the RSA public key exponent and $n$ as the RSA public key modulo.
 ```python
 cSend = (pow(2, e, n) * flag_ct) % n
 ```
@@ -119,19 +119,19 @@ Flag: `corctf{h4ng_0n_th15_1s_3v3n_34s13r_th4n_4n_LSB_0r4cl3...4nyw4y_1snt_f1zzb
 
 ### Figuring the Solution
 
-I have no experience with RSA before, so I started out by searching up LSB oracles and implementing it.
+I have no experience with RSA before, so I started out by searching up Least Significant Bit (LSB) oracles and implementing it.
 
 That led to me deciding to use _pwntools_ because I heard that it can do automatic interactions with a server (I also didn't use _socket_ before).
 
 However, downloading _pwntools_ was a very tough thing to do on my mac: I had to mix _pip_ and _brew_ commands and other parameters in order to download it into Python successfully.<br>
 At the end, I only got it to work in the terminal using the _python3.10_ command.
 
-Then, I made a ticket asking about how LSB works, and an organizer responded that LSB isn't relavent to fizzbuzz100.<br>
+Then, I made a ticket asking about how LSB works, and an organizer responded that LSB isn't relevant to fizzbuzz100.<br>
 After a while, I only understood LSB with modulo 2, so I didn't bother deriving it with modulo 3 or 5 and other conditions (which is for fizzbuzz101).
 
 I finally found the solution to the challenge through an article that was on LSB.
 
-I found it from [this article](https://bitsdeep.com/posts/attacking-rsa-for-fun-and-ctf-points-part-3/) in Bitsdeep about LSB oracle. In that page, I decided to click on the "Part 1" button to look into RSA.<br>
+I found it from [this article](https://bitsdeep.com/posts/attacking-rsa-for-fun-and-ctf-points-part-3/) in BitsDeep about LSB oracle. In that page, I decided to click on the "Part 1" button to look into RSA.<br>
 As a result, I was able to find the solution at the section [Decipher Oracle](https://bitsdeep.com/posts/attacking-rsa-for-fun-and-ctf-points-part-1/#:~:text=Decipher%20oracle).
 
 That also introduced me to RSA.
@@ -142,7 +142,7 @@ Another issue I faced was to divide the returned value by a number.
 
 In C++, getting an integer from an integer division only requires a slash, but in Python, any single-slash division results in a decimal.<br>
 I decided to use `int(a / b)` for divisions because I thought that would round the quotient towards negative infinity.<br>
-The truth is that with very big numbers, precision of the decimal will be lost and the resulting integer will have significant difference than the actual quotient.
+The truth is that with very big numbers, precision of the decimal will be lost and the resulting integer will have a significant difference than the actual quotient.
 
 I finally found this issue when I got regular results (random characters) for `long_to_bytes()` on a number, but mostly the character `\x00` when using the number `int(num / 2)`.<br>
 I searched up how to do floor divisions in Python and found the solution to this problem using double-slash `//`.
