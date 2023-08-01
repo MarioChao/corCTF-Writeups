@@ -23,6 +23,7 @@ Enjoy the CTF!
 ### Solution:
 
 <details>
+
 <summary>Solution</summary>
 
 In order to pass the sanity check, you can directly do what the description says.
@@ -32,9 +33,11 @@ Recall that the name of the challenge is "sanity check" but reversed, so do the 
 That is just another way to say _rotate the image by 180°_.
 
 <details>
+
 <summary>Flag</summary>
 
 ![flag: corctf{}](../../assets/sanitycheck2022_reversed.png)
 
 </details>
+
 </details>

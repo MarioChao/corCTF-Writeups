@@ -18,9 +18,11 @@ Downloads<br>
 ### Solution:
 
 <details>
+
 <summary>Solution</summary>
 
 <details>
+
 <summary>First</summary>
 
 Notice that the interaction prints something as long as the $pt$ (plaintext) of the given $ct$ (ciphertext) isn't the padded flag.
@@ -43,6 +45,7 @@ while True:
 </details>
 
 <details>
+
 <summary>Next</summary>
 
 We can let the interaction spit out a $pt$ closely related to the $flag$ by sending a $ct$ equals to the flag's ciphertext (let it be $flag\_ct$) multiplied by a certain number.
@@ -64,6 +67,7 @@ Thus, if the returned value is not "FizzBuzz" related, the padded flag can be ob
 </details>
 
 <details>
+
 <summary>Solution</summary>
 
 When you connect to the server, copy the given $n$, $e$, and $ct$ and define it in a Python shell. (these values are examples)
@@ -95,6 +99,7 @@ The flag can be found in the middle of the string
 </details>
 
 <details>
+
 <summary>Flag</summary>
 
 Flag: `corctf{h4ng_0n_th15_1s_3v3n_34s13r_th4n_4n_LSB_0r4cl3...4nyw4y_1snt_f1zzbuzz_s0_fun}`
@@ -105,7 +110,7 @@ Flag: `corctf{h4ng_0n_th15_1s_3v3n_34s13r_th4n_4n_LSB_0r4cl3...4nyw4y_1snt_f1zzb
 
 ## Other Things
 
-### Figuuring the Solution
+### Figuring the Solution
 
 I have no experience with RSA before, so I started out by searching up LSB oracles and implementing it.
 

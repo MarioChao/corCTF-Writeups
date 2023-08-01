@@ -15,9 +15,11 @@ Downloads<br>
 ### Solution:
 
 <details>
+
 <summary>Solution</summary>
 
 <details>
+
 <summary>First</summary>
 
 Examine _cbc.py_
@@ -93,6 +95,7 @@ print(f"{ct = }")
 </details>
 
 <details>
+
 <summary>Next</summary>
 
 We will need to find a way to recover the original $plaintext$.
@@ -158,6 +161,7 @@ Since the "key length" option of the decoder has a size limit of 500, we can cop
 </details>
 
 <details>
+
 <summary>Solve</summary>
 
 Using the ideas from the _Next_ step, we can write a program that give us the Vigenere ciphertext.
@@ -173,6 +177,7 @@ def remove_key(key, block):
 Next, assign variables $iv$ and $ct$ using _cbc_output.txt_
 
 <details>
+
 <summary>Assign</summary>
 
 ```python
@@ -209,6 +214,7 @@ Decoding the full Vigenere ciphertext with the key gives us a large chunk of tex
 </details>
 
 <details>
+
 <summary>Flag</summary>
 
 Flag: `corctf{ATLEASTITSNOTAGENERICROTTHIRTEENCHALLENGEIGUESS}`
