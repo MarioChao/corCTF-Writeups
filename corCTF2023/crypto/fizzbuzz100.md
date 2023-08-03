@@ -2,7 +2,7 @@
 
 Fizzbuzz is a type of algorithm that usually prints out "Fizz" or "Buzz" if a number is divisible by 3 or 5 respectively, "Fizzbuzz", if the number is divisible by both 3 and 5, or the number itself if it's divisible by neither 3 nor 5.
 
-In this challenge, the program runs an RSA encryption of a padded  and provides an interaction that decrypts given numbers.
+In this challenge, the program runs an RSA encryption of a padded flag and provides an interaction that decrypts given numbers.
 
 ## crypto/fizzbuzz100
 
