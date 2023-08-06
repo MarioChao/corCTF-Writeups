@@ -192,7 +192,7 @@ print("Code:", code)
 Using [dcode.fr's Vigenere cipher](https://www.dcode.fr/vigenere-cipher), we obtain the key `ACXQTSTCSXZWFCZY`.
 
 Decoding the full Vigenere ciphertext with the key gives us a large chunk of text, and the flag's text is located at the end.<br>
-[Here](../../assets/corctf23_cbc_decrypted_text.txt) is the full decrypted text with spacing.
+[Here](../../assets/corctf23_cbc_decrypted_text.txt) is the full decrypted text with spacing and punctuations (it's contains a famous quote about Linux).
 
 ---
 
